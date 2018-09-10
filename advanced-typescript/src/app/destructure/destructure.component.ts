@@ -19,11 +19,20 @@ export class DestructureComponent implements OnInit{
   constructor() { 
     this.books = [];
     this.books.push({title: 'Cuckoo\'s calling', author: 'Robert Galbraith', rating: 3.5});
-    this.books.push({title: 'Inferno', author: 'Dan Brown', rating: 4.5})
+    this.books.push({title: 'Inferno', author: 'Dan Brown', rating: 4.5});
+    this.books.push({title: 'Ishmael', author: 'Daniel Quinn', rating: 4.7});
   }
 
   deconstructArray() {
     [this.book1, this.book2] = this.books;
+  }
+
+  /**
+   * Decontructing arrays with rest parameters(..others) works only when descontruction happens in the function arguments
+   * @param param0 
+   */
+  deconstructArrayWithRestParameter([book1, book2, ...others]:Book[]) {
+    console.log(others[0]);
   }
 
   /**
@@ -45,6 +54,7 @@ export class DestructureComponent implements OnInit{
 
   ngOnInit() {
     this.deconstructArray();
+    this.deconstructArrayWithRestParameter(this.books);
     this.deconstructObject(); 
   }
 }
