@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { DestructureComponent } from './destructure/destructure.component';
+import { SpreadComponent } from './spread/spread.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DestructureComponent
+    DestructureComponent,
+    SpreadComponent
   ],
   imports: [
     BrowserModule
