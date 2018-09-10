@@ -20,6 +20,13 @@ export class SpreadComponent implements OnInit {
     for(let book of localBooks) {
       console.log(book);
     }
+
+    let localBooksWithPush: Book[] = [{title:'',author:'',rating:1}];
+    localBooksWithPush.push(...this.books);
+    console.log("Spread Array With Push");
+    for(let book of localBooksWithPush) {
+      console.log(book);
+    }
    }
 
    spreadObject() {
